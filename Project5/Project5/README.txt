@@ -26,8 +26,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-We had trouble with implementing SafeArgs and checking to see if it was the first time the app was run so no score would be shown on first run. Additionally, the sounds
-and toasts took a bit of trouble but we were about to figure it out.
+We had trouble with implementing ML Kit as we were unaware you had to turn on wifi in AndroidManifests. other than that, this project was pretty interesting and rather smooth.
 
 ## License
 
