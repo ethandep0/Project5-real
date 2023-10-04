@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <!-- Linear Layout for RadioGroups (Side by Side) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Linear Layout for Source Language RadioGroup -->
+            <LinearLayout
+                android:id="@+id/radioGroupLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/sourceRadioGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/source_language"
+                        android:textSize="17sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+                    <RadioButton
+                        android:id="@+id/englishSourceButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/english"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/spanishSourceButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/spanish"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/germanSourceButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/german"
+                        android:textSize="17sp" />
+
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/translationRadioGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/translationHeader"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/englishTranslationButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/english"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/spanishTranslationButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/spanish"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/germanTranslationButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/german"
+                        android:textSize="17sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/translatedTextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:text="@string/translation_result" />
+
+            <!--TEXT INPUT FRAGMENT-->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/inputFragmentView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:name="com.example.project5.TranslatorInputFrag"
+                tools:layout="@layout/fragment_translator_input" />
+
+        </LinearLayout>
+
+        <!-- Fragment Container -->
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
